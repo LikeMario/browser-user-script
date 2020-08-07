@@ -1,12 +1,13 @@
 "use strict";
 
 // ==UserScript==
-// @name         Make Udemy Quiz Printable
+// @name         Simplify Udemy Quiz
 // @namespace    licn
 // @version      0.9
 // @description  Simplify Udemy to show quiz results and make it to copy options and to print all questions
 // @author       Chen Li
 // @match        https://*.udemy.com/course/*/learn/quiz/*
+// @homepageURL  https://github.com/LikeMario/browser-user-script/tree/master/com.udemy
 // @grant        none
 // ==/UserScript==
 
