@@ -6,27 +6,27 @@
 // @version      0.9
 // @description  Hide other components like sidebar to make all questions in a Udemy quiz printable
 // @author       Chen Li
-// @match        https://*.udemy.com/course/*/learn/quiz/*
 // @match        https://*.udemy.com/course/*/learn/quiz/*/result/*
 // @grant        none
 // ==/UserScript==
 
 const styleSheet = `
 
-div[class^="app--header--"] {
+/*  
+div[class*="app--header--"] {
     display: none;
 }
-
-div[class^="app--content-column--"] {
+*/
+div[class*="app--content-column--"] {
     min-width: 100%;
     width: 100%;
 }
 
-div[class^="app--sidebar-column"] {
+div[class*="app--sidebar-column"] {
     display: none;
 }
 
-div[class^="app--body-container"] {
+div[class*="app--body-container"] {
     background-color: white
 }
 
@@ -39,20 +39,19 @@ div[class^="app--body-container"] {
     position: static;
 }
 
-
-div[class^="app--dashboard"] {
-    display: none;
-}
-
-div[class^="curriculum-item-view--scaled-height-limiter"] {
+div[class*="curriculum-item-view--scaled-height-limiter"] {
     position: static;
     height: auto;
     overflow: visible;
     max-height: none;
 }
 
-div[class^="curriculum-item-footer--footer"] {
+div[class*="curriculum-item-footer--footer"] {
    position: static;
+}
+
+div[class*="app--dashboard"] {
+    display: none;
 }
 
 .footer-v6 {
@@ -60,6 +59,7 @@ div[class^="curriculum-item-footer--footer"] {
     width: 100%;
 }
 
+/* Make the option text copyable */
 .toggle-control-label {
     cursor: auto;
     -webkit-touch-callout: initial;
@@ -73,7 +73,6 @@ div[class^="curriculum-item-footer--footer"] {
 `;
 
 (function() {
-    // Your code here...
     const s = document.createElement('style');
     s.type = "text/css";
     s.innerHTML = styleSheet;
